@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Sidebar.css";
 import plusicon from "../../assets/plus.png";
 import "./Sidebar.css";
-function Sidebar() {
+function Sidebar({ addNote }) {
   const colors = ["#fe9b72", "#fec971", " #00d4fe", "#b693fd", "#e4ee91"];
 
   const [listopen, setlistopen] = useState(false);
@@ -15,6 +15,7 @@ function Sidebar() {
             className="sidebar-list-item"
             key={index}
             style={{ backgroundColor: item }}
+            onClick={() => addNote(item)}
           ></li>
         ))}
       </ul>
