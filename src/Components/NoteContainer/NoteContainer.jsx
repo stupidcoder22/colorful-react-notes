@@ -17,7 +17,9 @@ function NoteContainer(prop) {
       <div className="note_container_notes">
         {newnotes.length > 0 ? (
           newnotes.map((item) => {
-            return <Note item={item} key={item.id} />;
+            return (
+              <Note item={item} key={item.id} deleteNote={prop.deleteNote} />
+            );
           })
         ) : (
           <h3>No Notes here</h3>

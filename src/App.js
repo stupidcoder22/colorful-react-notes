@@ -29,10 +29,15 @@ function App() {
     setnotes(tempnotes);
   };
 
+  const deleteNote = (id) => {
+    const tempnote = notes.filter((item) => item.id !== id);
+    setnotes(tempnote);
+  };
+
   return (
     <div className="App">
       <Sidebar addNote={addNote} />
-      <NoteContainer notes={notes} />
+      <NoteContainer notes={notes} deleteNote={deleteNote} />
     </div>
   );
 }

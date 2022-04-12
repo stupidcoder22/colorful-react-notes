@@ -1,14 +1,15 @@
 import React from "react";
 import "./Note.css";
-function Note({ item }) {
+import deleteIcon from "../../assets/delete.png";
+function Note(prop) {
   //   console.log(text, time, color);
-  const { text, time, color } = item;
+  const { id, text, time, color, delteNote } = prop.item;
   return (
     <div className="note" style={{ backgroundColor: color }}>
       <textarea className="note_text" defaultValue={text} />
       <div className="note-footer">
         <p>{time}</p>
-        <img src="" alt="" />
+        <img src={deleteIcon} alt="" onClick={() => prop.deleteNote(id)} />
       </div>
     </div>
   );
